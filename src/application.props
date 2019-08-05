@@ -1,0 +1,44 @@
+#H2 datasource config
+spring.datasource.url=jdbc:h2:mem:pollerdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+#spring.batch.job.enabled=false
+portal.api.url=http://localhost:8098/mm-mlp-dominointegration-api/get-new-messages
+
+logging.level.=INFO
+logging.level.ROOT                                     = INFO
+logging.level.com.lbg.mlp.useraccessmgmt               = INFO
+logging.level.org.apache.zookeeper                     = WARN
+logging.level.org.I0Itec.zkclient                      = WARN
+logging.level.org.springframework.beans.factory        = WARN
+logging.level.org.springframework.core.env             = WARN
+logging.level.org.springframework.context              = WARN
+logging.level.org.springframework.test                 = WARN
+logging.level.org.springframework.boot.actuate         = WARN
+logging.level.org.springframework.web                  = WARN
+logging.level.springfox.documentation                  = WARN
+logging.level.org.reflections.Reflections              = WARN
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+
+#Hystrix setting
+hystrix.command.permissionService.execution.isolation.thread.timeoutInMilliseconds= 8000
+hystrix.command.permissionService.execution.isolation.thread.timeoutInMilliseconds.interruptOnTimeout= true
+hystrix.command.permissionService.fallback.enabled= true
+hystrix.command.permissionService.execution.isolation.thread.strategy= THREAD
+hystrix.command.permissionService.circuitBreaker.enabled= true
+hystrix.command.permissionService.circuitBreaker.sleepWindowInMilliseconds= 5000
+hystrix.command.permissionService.circuitBreaker.requestVolumeThreshold= 5
+hystrix.command.permissionService.circuitBreaker.errorThresholdPercentage= 50
+
+#Domino API endpoints
+domino.create.project.endpoint=https://api.dominodatalab.com/v4/projects
+domino.create.organization.endpoint=https://api.dominodatalab.com/v4/organizations
+#todo: how to get projectId in url below
+domino.add.collaborator.endpoint=https://api.dominodatalab.com/v4/projects/projectId/collaborators
+#todo: ids in below url
+domino.remove.collaborator.endpoint=https://api.dominodatalab.com/v4/projects/projectId/collaborators/collaboratorId
+domino.api.key=dummy key
+
