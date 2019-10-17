@@ -23,7 +23,8 @@
 /dist/
 /nbdist/
 /.nb-gradle/
-
+out
+.gradle
 .mvn
 mm-domino-services-api/target/
 mm-domino-services-api/logs/
