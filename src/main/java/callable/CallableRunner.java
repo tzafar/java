@@ -30,7 +30,6 @@ public class CallableRunner {
         }
 
         System.out.println("Right after executing callables");
-
     }
 
     private static void executeCallables(List<Callable<Void>> callables, CompletionService<Void> completionService) {
@@ -38,9 +37,8 @@ public class CallableRunner {
     }
 
     private static ThreadPoolTaskExecutor getExecutor() {
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        //executor.setQueueCapacity(0);
-        executor.setCorePoolSize(100);
+        ThreadPoolTaskExecutor executor =  new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(1);
         executor.initialize();
         return executor;
     }
