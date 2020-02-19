@@ -9,6 +9,10 @@ import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.Future;
 
+/**
+ThreadPoolTaskExecutor helps to execute stuff in parralel and provides the avility to wait until all threads are finished. 
+*/
+
 public class CallableRunner {
     public static void main(String... args) throws Exception {
 
